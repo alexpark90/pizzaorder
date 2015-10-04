@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!--
+    Name:  Alex Park
+    Assignment:  Assignment 2
+    Date:  Feb. 22. 2015
+    
+    App Description: This application contains the pizza order system. 
+                    When the main index page is loaded, a user only is allowed to see the order form 
+                    and after submit it, the invoice and the bill will be appear.
+
+    Page Description: This is the main page. 
+                    It welcomes visitors and let them provide information by filling the form.
+                    If the user didn't provide proper information, the error message will be appear.
+                    There is clear button to clear the form and Another order button to make a new order again.
+
+    Files: designsheet.css - The main design for this application.
+            main.js - The javascript code that support functions that used in the index.html file.
+-->
+<html>
+    <head>
+        <title>Web Programming - Assignment 2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/designsheet.css">
+        <script src="scripts/main.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Welcome to Alex's Pizza Place!</h1>
+        </header>
+
+        <article>
+            <form name="form1">
+                <fieldset id="customerInfo">
+                    Enter your name, address, and phone number: <br /><br />
+                    <ul>
+                        <li><label for="name">Name:</label><input type="text" id="name">
+                            <span class="errorMsg">* name required</span></li>
+                        <li><label for="address">Address:</label><input type="text" id="address">
+                            <span class="errorMsg">* Address required</span></li>
+                        <li><label for="city">City:</label><input type="text" id="city">
+                            <span class="errorMsg">* City name required</span></li>
+                        <li><label for="province">Province:</label><input type="text" id="province">
+                            <span class="errorMsg">* Province name required</span></li>
+                        <li><label for="postal">Postal Code:</label><input type="text" id="postal">
+                            <span class="errorMsg">* Postal Code required</span>
+                            <span class="formatError">* ex: A1B2C3 (or A1B 2C3)</span></li>
+                        <li><label for="phone">Phone:</label><input type="text" id="phone">
+                            <span class="errorMsg">* Phone number required</span>
+                            <span class="formatError">* ex: 123-456-7890 or 1234567890</span></li>
+                    </ul><br />
+                </fieldset>
+                <fieldset id="pizzaSize">
+                    <legend>Pizza Size</legend>
+                    <ul>
+                        <li><input type="radio" id="small" name="size"><label for="small">Small</label></li>
+                        <li><input type="radio" id="medium" name="size"><label for="medium">Medium</label></li>
+                        <li><input type="radio" id="large" name="size"><label for="large">Large</label></li>
+                        <li><input type="radio" id="xlarge" name="size"><label for="xlarge">Extra Large</label></li>
+                    </ul>
+                </fieldset>
+                <fieldset id="pizzaToppings">
+                    <legend>Toppings</legend>
+                    <ul>
+                        <li><input type="checkbox" id="pepperoni" value="Pepperoni">
+                            <label for="pepperoni">Pepperoni</label></li>
+                        <li><input type="checkbox" id="onion" value="Onion">
+                            <label for="onion">Onion</label></li>
+                        <li><input type="checkbox" id="pineapple" value="Pineapple">
+                            <label for="pineapple">Pineapple</label></li>
+                        <li><input type="checkbox" id="mushroom" value="Mushroom">
+                            <label for="mushroom">Mushroom</label></li>
+                        <li><input type="checkbox" id="tomatoes" value="Tomatoes">
+                            <label for="tomatoes">Tomatoes</label></li>
+                        <li><input type="checkbox" id="pepper" value="Green pepper">
+                            <label for="pepper">Green Pepper</label></li>
+                        <li><input type="checkbox" id="bacon" value="Bacon">
+                            <label for="bacon">Bacon</label></li>
+                        <li><input type="checkbox" id="olives" value="Olives">
+                            <label for="olives">Olives</label></li>
+                        <li><input type="checkbox" id="cheese" value="Cheese">
+                            <label for="cheese">Extra Cheese</label>    </li>
+                    </ul>
+                </fieldset>
+                <p class="formatError">* Please choose Pizza Size to process the order.</p>
+                <input type="button" value="Submit Order" onclick="validate();">
+                <input type="button" value="Clear" onclick="clearForm();">
+            </form>
+            <div id="invoice">
+                <table id="customerOut">
+                    <tr>
+                        <th>Customer: </th>
+                        <th>Address: </th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span class="bold">Phone: </span></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <h2>Pizza Order:</h2>
+                <table id="billOut">
+                    <tr>
+                        <td><span class="bold">Size: </span></td>
+                        <td>$</td>
+                    </tr>
+                    <tr>
+                        <td><span class="bold">Toppings:</span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>$</td>
+                    </tr>
+                    <tr>
+                        <td><span class="bold">HST Amount:</span></td>
+                        <td>$</td>
+                    </tr>
+                    <tr>
+                        <td><span class="bold">Total Due:</span></td>
+                        <td>$</td>
+                    </tr>
+                </table>
+                <a href=javascript:anotherOrder();>Another Order</a>
+            </div>
+        </article>
+        
+        <footer>
+            2015 &copy; Alex Yeji Park
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,205 @@
+/*
+    Name:  Alex Park
+    Assignment:  Assignment 2
+    Date:  Feb. 22. 2015
+    
+    Page Description: This is the main CSS file for this application. 
+    Files:  index.html - The main page that has the pizza order system.
+            main.js - The javascript code that support functions that used in index.html file.
+*/
+
+html, body {
+    width: 100%;
+    margin: 0px;
+    font-size: 17px;
+    font-family: sans-serif;
+}
+
+header {
+    background: url(../imgs/pizza.jpg);
+    background-size: 100% 110%;
+    width: 40%;
+    height: 100%;
+    padding: 0px;
+    padding-top: 10%;
+    margin: 2%;
+    margin-bottom: 2%;
+    margin-left: 2%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+article {
+    width: 60%;
+    padding: 0px;
+    margin: 0;
+    margin-left: 2%;
+}
+
+form {
+    padding: 0px;
+}
+
+fieldset {
+    width: 97%;
+    padding: 1%;
+    margin-left: 3%;
+    margin-bottom: 20px;
+    border: solid darkolivegreen 2px;
+    box-sizing: border-box;
+}
+
+/********************** customer information section ************************/
+
+#customerInfo {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+
+#customerInfo label {
+    display: inline-block;
+    width: 98px;
+    text-align: right;
+}
+
+input[type=text] {
+    margin-left: 10px;
+}
+
+#city {
+    width: 140px;
+}
+
+#province {
+    width: 80px;
+}
+
+#postal {
+    width: 80px;
+}
+
+#phone {
+    width: 100px;
+}
+
+ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+ul li {
+    list-style-type: none;
+    margin: 1%;
+    margin-left: 0px;
+}
+
+/*************************** pizza information section *******************/
+
+#pizzaSize ul li {
+    display: inline-block;
+    width: 22.5%;
+    padding: 0px;
+    margin: 0px;
+}
+
+#pizzaToppings ul li {
+    display: inline-block;
+    width: 32.66666%;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+/*************************** submit and clear  buttons *******************/
+
+
+input[type=button] {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/*********************************** footer *********************************/
+
+
+footer {
+    text-align: right;
+    padding: 2%;
+}
+
+/**************************** hidden error message **************************/
+
+.errorMsg, .formatError {
+    color: red;
+    display: none;
+}
+
+/***************************** hidden invoice ****************************/
+
+#invoice {
+    display: none;
+}
+				
+table {
+    width : 50%;
+    text-align: left;
+    border:2px solid #006600;
+    border-collapse: collapse;
+}
+
+#customerOut th {
+    color: darkcyan;
+    width: 50%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 2%;
+    box-sizing: border-box;
+}
+							
+#customerOut td {
+    width: 50%;
+    padding-left: 2%;
+    box-sizing: border-box;
+}
+
+#customerOut tr:nth-child(4) td{
+    padding-bottom: 5%;
+}
+
+#billOut {
+    width: 53%;
+}
+				
+#billOut th, #billOut td {
+    padding-left: 1%;
+    border:2px dotted #006600;
+    border-collapse: collapse;
+}
+
+#billOut tr:nth-child(2) td {
+    border-bottom: none;
+}
+
+#billOut tr:nth-child(3) td {
+    border-top: none;
+}
+
+#billOut tr td~td {
+    text-align: right;
+    width: 50px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+h2 {
+    color: darkcyan;
+    border-bottom: 2px dotted #006600;
+}
+
+#invoice a {
+    display: block;
+    margin-top: 2%;
+}
